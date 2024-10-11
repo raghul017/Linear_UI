@@ -18,24 +18,29 @@ export const Header = () => {
 
         <nav
           className={classNames(
-            "h-[calc(100vh_-_var(--navigation-height))] md:block fixed top-navigation-height left-0 w-full bg-white overflow-auto",
+            "h-[calc(100vh_-_var(--navigation-height))] md:block fixed md:relative top-navigation-height md:top-0 md:h-auto md:w-auto left-0 w-full bg-background md:bg-transparent overflow-auto",
             hambugerIsOpen ? "" : "hidden"
           )}
         >
-          <ul className="flex items-center h-full [&_a]:text-sm [&_li]:ml-6 [&_a:hover]:text-grey [&_a]:transition-colors">
+          <ul
+            className={classNames(
+              "flex flex-col md:flex-row md:items-center h-full [&_li]:ml-6 [&_li]:border-b [&_li]:border-grey-dark md:[&_li]:border-none",
+              "[&_a]:text-md [&_a:hover]:text-grey [&_a]:h-navigation-height [&_a]:w-full [&_a]:flex [&_a]:items-center [&_a]:transition-colors md:[&_a]:text-sm"
+            )}
+          >
             <li>
               <Link href="#">Features</Link>
             </li>
             <li>
               <Link href="#">Method</Link>
             </li>
-            <li className="hidden lg:block">
+            <li className="md:hidden lg:block">
               <Link href="#">Customers</Link>
             </li>
-            <li className="hidden lg:block">
+            <li className="md:hidden lg:block">
               <Link href="#">Changelog</Link>
             </li>
-            <li className="hidden lg:block">
+            <li className="md:hidden lg:block">
               <Link href="#">Integrations</Link>
             </li>
             <li>
@@ -57,7 +62,7 @@ export const Header = () => {
         </div>
 
         <button
-          className="ml-6"
+          className="ml-6 md:hidden"
           onClick={() => {
             setHamburgerIsOpen(!hambugerIsOpen);
           }}
