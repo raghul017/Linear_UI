@@ -3,6 +3,7 @@ import localFont from "next/font/local";
 import "./globals.css";
 import { Container } from "../components/Container";
 import { Header } from "../components/Header";
+import { Footer } from "../components/Footer";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -38,10 +39,10 @@ export default function RootLayout({
       >
         <div>
           <Header />
-          <main className="pt-navigation-height">{children}</main>
-          <footer>
-            <Container>footer here</Container>
-          </footer>
+          <main className="pt-navigation-height bg-page-gradient">
+            {children}
+          </main>
+          <Footer />
         </div>
       </body>
     </html>
