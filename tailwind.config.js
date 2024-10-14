@@ -17,7 +17,7 @@ module.exports = {
       "5xl": "4rem",
       "6xl": ["4.4rem", "1"], //["font-size" , "line-height"]
       "7xl": ["4.8rem", "1"],
-      "8xl": ["8rem", "1"],
+      "8 xl": ["8rem", "1"],
     },
     colors: {
       transparent: "transparent",
